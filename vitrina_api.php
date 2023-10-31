@@ -365,6 +365,8 @@ class Passport{
     public $issued_by;
     /** @var string дата выдачи в формате дд.мм.гггг */
     public $issued_date;
+    /** @var string серия и номер паспорта */
+    public $number;
 }
 
 class pGetPayUrl extends apiParam{

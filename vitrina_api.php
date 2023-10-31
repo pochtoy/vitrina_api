@@ -68,7 +68,7 @@ interface iPochtoyEndPoint{
      * @param pGetPayUrl $param
      * @return aGetPayUrl
      */
-    function getPaytUrl($param);
+    function getPayUrl($param);
 }
 
 interface iVitrinaEndPoint{

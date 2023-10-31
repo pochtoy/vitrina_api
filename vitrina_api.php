@@ -382,6 +382,9 @@ class pGetPayUrl extends apiParam{
     /** @var string страница, на которую перенаправлять после оплаты */
     public $redirect_url;
 
+    /** @var bool */
+    public $test;
+
 }
 
 class aGetPayUrl extends apiAnswer{

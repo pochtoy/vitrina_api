@@ -63,10 +63,21 @@ interface iPochtoyEndPoint{
      * @return aCalc
      */
     function calcExpress($param);
+
+    /**
+     * @param pGetPayUrl $param
+     * @return aGetPayUrl
+     */
+    function getPaytUrl($param);
 }
 
 interface iVitrinaEndPoint{
 
+    /**
+     * @param pSuccessPaymentCallback $param
+     * @return apiAnswer
+     */
+    function successPaymentCallback($param);
 }
 
 abstract class apiParam{
@@ -322,7 +333,7 @@ class pCalc extends apiParam{
 }
 
 class aCalc extends apiAnswer {
-    /** @var цена в долларах */
+    /** @var float цена в долларах */
     public $price;
 }
 
@@ -348,11 +359,11 @@ class OrderInfo{
 }
 
 class Passport{
-    /** @var инн номер */
+    /** @var string инн номер */
     public $inn;
-    /** @var кем выдан */
+    /** @var string кем выдан */
     public $issued_by;
-    /** @var дата выдачи в формате дд.мм.гггг */
+    /** @var string дата выдачи в формате дд.мм.гггг */
     public $issued_date;
 }
 
@@ -369,5 +380,17 @@ class pGetPayUrl extends apiParam{
     /** @var string страница, на которую перенаправлять после оплаты */
     public $redirect_url;
 
+}
 
+class aGetPayUrl extends apiAnswer{
+    /** @var string внутренний номер оплаты */
+    public $payment_id;
+
+    /** @var string страница на которую надо перенаправлять пользователя */
+    public $payment_url;
+}
+
+class pSuccessPaymentCallback extends apiParam{
+    /** @var string внутренний номер оплаты */
+    public $payment_id;
 }

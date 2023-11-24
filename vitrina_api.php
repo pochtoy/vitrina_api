@@ -73,7 +73,7 @@ interface iPochtoyEndPoint{
 
 interface iVitrinaEndPoint{
 
-    /**
+    /** коллбек вызываемый при смене статусов товара
      * @param pPositionStatusChanged $param
      * @return apiAnswer
      */

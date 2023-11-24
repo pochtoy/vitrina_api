@@ -74,10 +74,10 @@ interface iPochtoyEndPoint{
 interface iVitrinaEndPoint{
 
     /**
-     * @param pSuccessPaymentCallback $param
+     * @param pPositionStatusChanged $param
      * @return apiAnswer
      */
-    function successPaymentCallback($param);
+    function positionChangeStatus( $param);
 }
 
 abstract class apiParam{
@@ -401,4 +401,19 @@ class aGetPayUrl extends apiAnswer{
 class pSuccessPaymentCallback extends apiParam{
     /** @var string внутренний номер оплаты */
     public $payment_id;
+}
+
+class pPositionStatusChanged extends apiParam{
+    /** @var int position id returned in addOrder */
+    public $pochtoy_id;
+    /** @var string */
+    public $vitrina_id;
+    /** @var string одно из значений purchased|delivered|sended|declined */
+    public $status;
+    /** @var float если status=declined то тут передается сумма в рублях для возврата клиенту */
+    public $returned_sum;
+    /** @var string если status=declined то тут передается причина  */
+    public $reason;
+    /** @var string если status=sended то тут передается трек посылки в котором уехал товар */
+    public $tracking;
 }

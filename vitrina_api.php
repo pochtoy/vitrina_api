@@ -144,6 +144,9 @@ class pAddOrder extends apiParam {
     /** @var float $payed_sum */
     public $payed_sum;
 
+    /** @var string номер транзакции в платежной системе, которой пополнен счет*/
+    public $transaction_id;
+
     /** @var string */
     public $vitrina_id;
 

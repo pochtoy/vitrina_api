@@ -69,6 +69,14 @@ interface iPochtoyEndPoint{
      * @return aGetPayUrl
      */
     function getPayUrl($param);
+
+    /**
+     * @param pTrackInfo $param
+     * @return aTrackInfo
+     */
+    function trackPackage($param);
+
+
 }
 
 interface iVitrinaEndPoint{
@@ -419,4 +427,20 @@ class pPositionStatusChanged extends apiParam{
     public $reason;
     /** @var string если status=sended то тут передается трек посылки в котором уехал товар */
     public $tracking;
+}
+
+class pTrackInfo extends apiParam{
+    /** @var string */
+    public $tracking;
+}
+
+class aTrackInfo extends apiAnswer{
+    /** @var trackInfo[] */
+    public $info;
+}
+
+class trackInfo{
+    public $time;
+    public $location;
+    public $description;
 }

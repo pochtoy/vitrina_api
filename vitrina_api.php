@@ -76,6 +76,11 @@ interface iPochtoyEndPoint{
      */
     function trackPackage($param);
 
+    /**
+     * @param apiParam
+     * @return aGetFeedbacks
+     */
+    function getFeedbacks($param);
 
 }
 
@@ -443,4 +448,26 @@ class trackInfo{
     public $time;
     public $location;
     public $description;
+}
+
+class packageFeedback{
+    public $text;
+    public $sendDate;
+    public $feedbackDate;
+    public $tracking;
+    public $rating;
+    public $name;
+    public $city;
+    public $zip;
+    public $latitude;
+    public $longitude;
+    /** @var string[] */
+    public $shop_urls;
+    /** @var string[] */
+    public $images;
+}
+
+class aGetFeedbacks extends apiAnswer{
+    /** @var packageFeedback[] */
+    public $feedbacks;
 }

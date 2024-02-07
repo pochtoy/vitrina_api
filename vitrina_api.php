@@ -217,6 +217,9 @@ class ShopPosition{
 
     /** @var string */
     public $vitrina_data;
+
+    /** @var string */
+    public $reason;
 }
 
 class PVZ{

@@ -388,6 +388,8 @@ class Passport{
     public $number;
     /** @var string почтовый код*/
     public $postal_code;
+    /** @var string адрес*/
+    public $address;
 
 }
 
